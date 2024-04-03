@@ -65,8 +65,8 @@ const LogBookForm: React.FC = () => {
         <input type="checkbox" name="service" className="ml-3 mr-1" id="service" />
         <label htmlFor="service">Service</label>
       </div>
-      <Button color="light" pill> + </Button>
-      <button type="button" onClick={calculateTotal}>Add All Records</button>
+      <Button color="light" pill> + Nuevo registro </Button>
+      <button type="button" onClick={calculateTotal}>Agregar</button>
       <p>Total: {total}</p>
     </form>
   );
