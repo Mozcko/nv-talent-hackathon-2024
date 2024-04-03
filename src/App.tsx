@@ -51,7 +51,7 @@ function App() {
           <Route path="/logbookform" element={<LogBookForm />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/user" element={<UserProfile />} />
-          <Route path="/recomendations" element={<Recomendations />} />
+          <Route path="/business_wizard" element={<Recomendations />} />
         </Routes>
 
       </div>

@@ -15,10 +15,8 @@ interface TopbarProps {
 const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
   const links = [
     { label: "Tablero de finanzas", href: "/dashboard" },
-    { label: "Punto de venta", href: "/point-of-sale" },
-    { label: "Proveedores", href: "/providers" },
-    { label: "Recomendaciones", href: "/recomendaciones" },
-    { label: "Gastos", href: "/gastos" },
+    { label: "Mi libreta", href: "/logbookform" },
+    { label: "Business Wizard", href: "/business_wizard" },
   ];
 
   return (
@@ -50,9 +48,9 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
         )}
 
         {isLoggedIn && (
-          <button className="inline-flex items-center ml-3">
+          <NavLink to="/user" className="inline-flex items-center ml-3">
              <Avatar img={logo} alt="avatar of Jese" rounded />
-          </button>
+          </NavLink>
         )}
       </Navbar.Collapse>
     </Navbar>
