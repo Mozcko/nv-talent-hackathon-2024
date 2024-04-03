@@ -115,6 +115,7 @@ const Feed = () => {
       <div className="hidden md:block">
         <Card className="sticky top-16 mx-10 max-w-xs" imgSrc={maryFernandez}>
           <h5 className="mb-1 text-center text-base font-bold tracking-tight text-black-100 dark:text-white">María Fernández</h5>
+          <p className="text-center font-normal text-black-200 dark:text-gray-400">@MaryFernandez</p>
           <div className='mx-auto'>
             <Rating>
               <Rating.Star />
@@ -124,7 +125,6 @@ const Feed = () => {
               <Rating.Star filled={false} />
             </Rating>
           </div>
-          <p className="text-center font-normal text-black-200 dark:text-gray-400">@MaryFernandez</p>
         </Card>
       </div>
       
