@@ -3,5 +3,5 @@ import logo from './logo.svg'
 
 export {
     full_logo,
-    logo
+    logo,
 }

@@ -15,6 +15,7 @@ export default {
         tertiary: "#D4F4FF",
         accent: "#E49D22",
         "accent-100": "#009BF9",
+        "accent-200":"#265399",
         "fill-100": "#AED6FE",
         "fill-200": "#4B628E",
         "fill-300": "#6D6B9E",
