@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Navbar, TextInput, Button, NavbarLink, Avatar } from "flowbite-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from 'react-router-dom';
+import { Navbar, Button, NavbarLink, Avatar } from "flowbite-react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -31,7 +31,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-      {isLoggedIn && (
+        {isLoggedIn && (
           <>
             {links.map((link) => (
               <NavbarLink key={link.href} href={link.href} className="mt-3 bg-white-100 text-primary">
@@ -41,33 +41,12 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
           </>
         )}
 
-        <TextInput
-          id="search"
-          type="search"
-          placeholder="Search..."
-          className="mr-3 text-fill-100"
-          rightIcon={() => (
-            <FontAwesomeIcon
-              icon={faSearch}
-              color="gray"
-              size="sm"
-              className="mt-1 text-fill-100"
-            />
-          )}
-        />
-        <Button
-          outline 
-          gradientDuoTone="cyanToBlue"
-          size="sm"
-          
-        >
-          Search
-        </Button>
-
         {!isLoggedIn && (
-          <Button color="light" size="sm" className="bg-primary text-white-100">
-            Log in
-          </Button>
+          <NavLink to="/login">
+            <Button color="dark" size="sm" className="bg-primary text-white-100">
+              Log in
+            </Button>
+          </NavLink>
         )}
 
         {isLoggedIn && (

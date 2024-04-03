@@ -10,7 +10,8 @@ import CashFlowChart from './CashFlowChart';
 import BestSellingProductsChart from './BestSellingProduct';
 import CustomerSegmentsChart from './CustomerSegments';
 import SalesChannelTrendsChart from './SalesChannelsTradeChart';
-import ProfitabilityChart from './ProfitabilityChart';  
+import ProfitabilityChart from './ProfitabilityChart'; 
+import Loader from './Loader' 
 
 export {
     Topbar,
@@ -26,4 +27,5 @@ export {
     CustomerSegmentsChart,
     SalesChannelTrendsChart,
     ProfitabilityChart,
+    Loader,
 }
