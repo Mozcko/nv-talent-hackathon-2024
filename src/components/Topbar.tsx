@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Navbar, TextInput, Button, NavbarLink } from "flowbite-react";
+import { Navbar, TextInput, Button, NavbarLink, Avatar } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -22,7 +22,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
   ];
 
   return (
-    <Navbar fluid={true} rounded={true} className="bg-white-100">
+    <Navbar fluid={true} rounded={true} className="bg-white-100 sticky top-0">
       <Navbar.Brand href="https://pymeforge.com">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="PymeForge logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
@@ -72,11 +72,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
 
         {isLoggedIn && (
           <button className="inline-flex items-center ml-3">
-            <img
-              src={logo} // Replace with your image path
-              className="w-8 h-8 rounded-full"
-              alt="Profile picture"
-            />
+             <Avatar img={logo} alt="avatar of Jese" rounded />
           </button>
         )}
       </Navbar.Collapse>

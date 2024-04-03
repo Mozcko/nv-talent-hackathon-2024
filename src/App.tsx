@@ -1,5 +1,9 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { LogIn } from './routes';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { 
+  LogIn,
+  Feed
+} from './routes';
 
 import {
   Topbar
@@ -13,6 +17,7 @@ function App() {
         
         <Routes>
           <Route path="/login" element={<LogIn />} />
+          <Route path="/feed" element={<Feed />} />
         </Routes>
 
       </div>
