@@ -2,7 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { 
   LogIn,
-  Feed
+  Feed,
+  LogBook,
+  LogBookForm,
+  Dashboard
 } from './routes';
 
 import {
@@ -18,6 +21,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<LogIn />} />
           <Route path="/feed" element={<Feed />} />
+          <Route path="/logbook" element={<LogBook />} />
+          <Route path="/logbookform" element={<LogBookForm />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
 
       </div>
