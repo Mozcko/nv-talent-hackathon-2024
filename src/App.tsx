@@ -6,7 +6,9 @@ import {
   Feed,
   LogBook,
   LogBookForm,
-  Dashboard
+  Dashboard,
+  UserProfile,
+  Recomendations
 } from './routes';
 
 import {
@@ -48,6 +50,8 @@ function App() {
           <Route path="/logbook" element={<LogBook />} />
           <Route path="/logbookform" element={<LogBookForm />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/user" element={<UserProfile />} />
+          <Route path="/recomendations" element={<Recomendations />} />
         </Routes>
 
       </div>
