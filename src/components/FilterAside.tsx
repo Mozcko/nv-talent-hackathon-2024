@@ -1,64 +1,189 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono de filtro de Font Awesome
 
-const Filter = () => {
-  const [selectedTag, setSelectedTag] = useState(null);
-  const [selectedLocation, setSelectedLocation] = useState(null);
+const FilterAside = ({ tags, setFilters }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleTagSelect = (tag) => {
-    if (selectedTag === tag) {
-      setSelectedTag(null);
-    } else {
-      setSelectedTag(tag);
-    }
+  const handleFilterChange = (category, e) => {
+    const value = e.target.value;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [category]: value
+    }));
   };
-
-  const handleLocationSelect = (location) => {
-    if (selectedLocation === location) {
-      setSelectedLocation(null);
-    } else {
-      setSelectedLocation(location);
-    }
-  };
-
-  const tags = ["Design", "Project", "Visual", "Branding", "Illustration"];
-  const locations = ["New York", "Los Angeles", "San Francisco", "London", "Paris"];
 
   return (
-    <div className="w-64 bg-gray-100 border-r border-gray-300">
-      <div className="p-4">
-        <h6 className="text-lg font-medium text-gray-900 dark:text-white">
-          Filter by tag
-        </h6>
-        <div className="mt-2">
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => handleTagSelect(tag)}
-              className={`text-sm py-1 px-2 rounded-full mr-2 mb-1 focus:outline-none focus:ring-2 focus:ring-blue-gray-500 focus:ring-opacity-50 ${selectedTag === tag ? 'bg-blue-gray-100 text-blue-gray-800' : ''}`}
-            >
-              {tag}
-            </button>
-          ))}
+    <aside className="md:block top-16 sticky">
+      {/* Filtros para dispositivos grandes */}
+      <div className="hidden md:flex flex-col bg-white-100 p-4 rounded-lg w-64">
+        <h2 className="text-black-100">Filters</h2>
+        {/* Contenido de los filtros */}
+        <div className="mt-4">
+          <h3 className="text-black-100">Cities</h3>
+          <select
+            className="w-full py-2 px-3 rounded-md border border-black-200"
+            onChange={(e) => handleFilterChange("city", e)}
+          >
+            <option value="">All</option>
+            {tags.cities.map((city, index) => (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+        </div>
+        {/* Añade los otros filtros aquí */}
+        <div className="mt-4">
+          <h3 className="text-black-100">Categories</h3>
+          <select
+            className="w-full py-2 px-3 rounded-md border border-black-200"
+            onChange={(e) => handleFilterChange("category", e)}
+          >
+            <option value="">All</option>
+            {tags.categories.map((category, index) => (
+              <option key={index} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mt-4">
+          <h3 className="text-black-100">Subcategories</h3>
+          <select
+            className="w-full py-2 px-3 rounded-md border border-black-200"
+            onChange={(e) => handleFilterChange("subcategory", e)}
+          >
+            <option value="">All</option>
+            {tags.subcategories.map((subcategory, index) => (
+              <option key={index} value={subcategory}>
+                {subcategory}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mt-4">
+          <h3 className="text-black-100">Delivery Types</h3>
+          <select
+            className="w-full py-2 px-3 rounded-md border border-black-200"
+            onChange={(e) => handleFilterChange("delivery", e)}
+          >
+            <option value="">All</option>
+            {tags.deliveryTypes.map((deliveryType, index) => (
+              <option key={index} value={deliveryType}>
+                {deliveryType}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mt-4">
+          <h3 className="text-black-100">Product Types</h3>
+          <select
+            className="w-full py-2 px-3 rounded-md border border-black-200"
+            onChange={(e) => handleFilterChange("product", e)}
+          >
+            <option value="">All</option>
+            {tags.productTypes.map((productType, index) => (
+              <option key={index} value={productType}>
+                {productType}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
-      <div className="p-4">
-        <h6 className="text-lg font-medium text-gray-900 dark:text-white">
-          Filter by location
-        </h6>
-        <div className="mt-2">
-          {locations.map((location) => (
-            <button
-              key={location}
-              onClick={() => handleLocationSelect(location)}
-              className={`text-sm py-1 px-2 rounded-full mr-2 mb-1 focus:outline-none focus:ring-2 focus:ring-blue-gray-500 focus:ring-opacity-50 ${selectedLocation === location ? 'bg-blue-gray-100 text-blue-gray-800' : ''}`}
-            >
-              {location}
-            </button>
-          ))}
-        </div>
+
+      {/* Menú desplegable para dispositivos pequeños */}
+      <div className="md:hidden bg-gray-100">
+        <button
+          className="flex items-center justify-center px-4 py-2 bg-primary text-white rounded-md"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <FontAwesomeIcon icon={faFilter} className="mr-2" /> {/* Ícono de filtro de Font Awesome */}
+          {isMenuOpen ? "Hide Filters" : "Show Filters"}
+        </button>
+        {isMenuOpen && (
+          <div className="mt-2">
+            {/* Contenido del menú desplegable */}
+            <div>
+              <h2 className="text-black-100">Filters</h2>
+              {/* Contenido de los filtros */}
+              <div className="mt-2">
+                <h3 className="text-black-100">Cities</h3>
+                <select
+                  className="w-full py-2 px-3 rounded-md border border-black-200"
+                  onChange={(e) => handleFilterChange("city", e)}
+                >
+                  <option value="">All</option>
+                  {tags.cities.map((city, index) => (
+                    <option key={index} value={city}>
+                      {city}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {/* Añade los otros filtros aquí */}
+              <div className="mt-2">
+                <h3 className="text-black-100">Categories</h3>
+                <select
+                  className="w-full py-2 px-3 rounded-md border border-black-200"
+                  onChange={(e) => handleFilterChange("category", e)}
+                >
+                  <option value="">All</option>
+                  {tags.categories.map((category, index) => (
+                    <option key={index} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="mt-2">
+                <h3 className="text-black-100">Subcategories</h3>
+                <select
+                  className="w-full py-2 px-3 rounded-md border border-black-200"
+                  onChange={(e) => handleFilterChange("subcategory", e)}
+                >
+                  <option value="">All</option>
+                  {tags.subcategories.map((subcategory, index) => (
+                    <option key={index} value={subcategory}>
+                      {subcategory}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="mt-2">
+                <h3 className="text-black-100">Delivery Types</h3>
+                <select
+                  className="w-full py-2 px-3 rounded-md border border-black-200"
+                  onChange={(e) => handleFilterChange("delivery", e)}
+                >
+                  <option value="">All</option>
+                  {tags.deliveryTypes.map((deliveryType, index) => (
+                    <option key={index} value={deliveryType}>
+                      {deliveryType}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="mt-2">
+                <h3 className="text-black-100">Product Types</h3>
+                <select
+                  className="w-full py-2 px-3 rounded-md border border-black-200"
+                  onChange={(e) => handleFilterChange("product", e)}
+                >
+                  <option value="">All</option>
+                  {tags.productTypes.map((productType, index) => (
+                    <option key={index} value={productType}>
+                      {productType}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+    </aside>
   );
 };
 
-export default Filter;
+export default FilterAside;

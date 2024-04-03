@@ -1,11 +1,22 @@
-import { faPaperPlane, faImage } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Button, TextInput } from "flowbite-react";
 import { Img } from "react-image";
-import { logo } from "../assets";
-import Tag from "./Tag"; // Import your custom Tag component
 
-const FeedPost = ({ user, friendStatus }) => {
+import { Badge } from "flowbite-react";
+
+const Tag = ({ text, color, pill }) => {
+  return (
+    <Badge pill={pill} className={`${color} ml-1 mt-3 text-white-100 text-xs`}>
+      {text}
+    </Badge>
+  );
+};
+
+const FeedPost = ({ user }) => {
+  const tagsArray = Object.values(user.tags);
+
   return (
     <Card className="max-w-sm mt-4">
       <div className="flex justify-end px-4 pt-4">
@@ -27,8 +38,8 @@ const FeedPost = ({ user, friendStatus }) => {
 
         {/* Display the tags using your custom Tag component */}
         <div className="flex flex-wrap justify-center mt-3">
-          {user.tags.map((tag, index) => (
-            <Tag key={index} text={tag} color="blue-gray" />
+          {tagsArray.map((tag, index) => (
+            <Tag key={index} text={tag} color="bg-fill-300" />
           ))}
         </div>
 
@@ -37,15 +48,15 @@ const FeedPost = ({ user, friendStatus }) => {
             onClick={() => {}}
             className="inline-flex items-center rounded-lg bg-cyan-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
           >
-            {friendStatus}
+            Add Friend
           </Button>
         </div>
-          <form className=" mt-4 flex flex-1">
-            <TextInput type="text" placeholder="Get in Touch" />
-            <Button color="gray" className="px-3 ml-2">
-              <FontAwesomeIcon icon={faPaperPlane} />
-            </Button>
-          </form>
+        <form className=" mt-4 flex flex-1">
+          <TextInput type="text" placeholder="Get in Touch" />
+          <Button color="gray" className="px-3 ml-2">
+            <FontAwesomeIcon icon={faPaperPlane} />
+          </Button>
+        </form>
       </div>
     </Card>
   );

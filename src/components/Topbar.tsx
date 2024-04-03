@@ -14,13 +14,13 @@ interface TopbarProps {
 
 const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
   const links = [
-    { label: "Tablero de finanzas", href: "/dashboard" },
+    { label: "Mi Tablero", href: "/dashboard" },
     { label: "Mi libreta", href: "/logbookform" },
-    { label: "Business Wizard", href: "/business_wizard" },
+    { label: "Mis recomendaciones", href: "/business_wizard" },
   ];
 
   return (
-    <Navbar fluid={true} rounded={true} className="bg-white-100 sticky top-0">
+    <Navbar fluid={true} rounded={true} className="bg-white-100 sticky top-0 z-50">
       <Navbar.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="PymeForge logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
