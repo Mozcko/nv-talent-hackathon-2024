@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.dashboard-item {
+    width: 100%;
+    max-width: 300px; /* Establece el ancho máximo deseado */
+    height: 200px; /* Establece la altura deseada */
+}
