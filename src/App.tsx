@@ -1,4 +1,5 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { LogIn } from './routes';
 
 import {
   Topbar
@@ -7,8 +8,14 @@ import {
 function App() {
   return (
     <BrowserRouter>
-      <Topbar isLoggedIn={true} />
-      {/* Render the rest of your components here */}
+      <div>
+        <Topbar isLoggedIn={true} />
+        
+        <Routes>
+          <Route path="/login" element={<LogIn />} />
+        </Routes>
+
+      </div>
     </BrowserRouter>
   );
 }
