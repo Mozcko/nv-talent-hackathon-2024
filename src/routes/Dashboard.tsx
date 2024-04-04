@@ -46,7 +46,7 @@ const Dashboard = () => {
 
       <h2 className="text-2xl mb-4" style={{ color: "#618AAF" }}>Tu camino hacia el éxito comienza aquí...</h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 align-center">
         <div className="dashboard-item mt-12">
           <Income />
         </div>
