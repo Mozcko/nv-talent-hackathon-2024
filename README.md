@@ -12,19 +12,11 @@ Incorpora una herramienta de registro de transacciones sencilla y con una curva 
 - [@ABRONA](https://www.github.comABRONA)
 - [Daniela Gama Cruz](https://www.linkedin.com/in/daniela-gama-a03781215/)
 
-
-## Used By
-
-Este proyecto será usado por las siguentes compañías:
-
-- Fundación Coppel ;) ;)
-- Miles de Micro y Pequeños empresarios <3
-
 ## Tech Stack
 
-**Client:** React, Typescript, Flowbite, TailwindCSS
+**Frontend:** React, Typescript, Flowbite, TailwindCSS
 
-**Server:** Supabase
+**Backend:** Supabase
 
 
 ## Installation
@@ -33,17 +25,25 @@ Clonar el repositorio del proyecto y entrar en su directorio
 
 ```bash
   git clone https://github.com/Mozcko/nv-talent-hackathon-2024.git
+```
+```bash
   cd nv-talent-hackathon-2024
 ```
 
 Instalar las dependencias necesarias
 
 ```bash
-  npm install
+  npm i
 ```
 
 Ejecutar el proyecto localmente: 
 ```bash
-  npm start
+  npm run dev
 ```
-    
+
+## Used By
+
+Este proyecto será usado por las siguentes compañías:
+
+- Fundación Coppel ;) ;)
+- Miles de Micro y Pequeños empresarios <3
