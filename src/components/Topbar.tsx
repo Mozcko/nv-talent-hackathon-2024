@@ -16,7 +16,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = false }) => {
   const links = [
     { label: "Mi Tablero", href: "/dashboard" },
     { label: "Mi libreta", href: "/logbookform" },
-    { label: "Mis recomendaciones", href: "/business_wizard" },
+    { label: "Mi Asesor", href: "/business_wizard" },
   ];
 
   return (

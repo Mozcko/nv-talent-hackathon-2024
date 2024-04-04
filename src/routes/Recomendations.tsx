@@ -122,7 +122,7 @@ const Recommendations = () => {
         }],
         temperature: 0.7,
         max_tokens: 3000,
-        top_p: 1,
+        top_p: 0.7,
         frequency_penalty: 0,
         presence_penalty: 0,
       });
@@ -156,7 +156,7 @@ const Recommendations = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        Business Wizard
+        Mi Asesor
       </motion.h1>
       {showForm && (
         <form onSubmit={handleSubmit} className="space-y-4">
