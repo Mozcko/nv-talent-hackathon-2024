@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# PymeForge: Un proyecto de Data Dew para Talent Hackathon 
 
-Currently, two official plugins are available:
+PymeForge es una aplicación web que ayuda a los micro y pequeños empresarios de México, a formar conexiones valiosas, permitiéndoles formar comunidades como redes de apoyo, de proveedores o de interacción. 
+Incorpora una herramienta de registro de transacciones sencilla y con una curva de aprendizaje mínima que permite a los empresarios ser tan específicos o generales como prefieran, ajustándose tanto al usuario avanzado y deliberado como al que no quiere complicarse, dashboards contables y un constructor de prompts curados para devolver una respuesta desde a una IA generativa que se ajuste a las necesidades del empresario, sin que él necesite ser un prompt engineer. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Authors
 
-- Configure the top-level `parserOptions` property like this:
+- [@Mozcko](https://www.github.com/Mozcko)
+- [@ABRONA](https://www.github.comABRONA)
+- [Daniela Gama Cruz](https://www.linkedin.com/in/daniela-gama-a03781215/)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+
+## Used By
+
+Este proyecto será usado por las siguentes compañías:
+
+- Fundación Coppel ;) ;)
+- Miles de Micro y Pequeños empresarios <3
+
+## Tech Stack
+
+**Client:** React, Typescript, Flowbite, TailwindCSS
+
+**Server:** Supabase
+
+
+## Installation
+
+Clonar el repositorio del proyecto y entrar en su directorio
+
+```bash
+  git clone https://github.com/Mozcko/nv-talent-hackathon-2024.git
+  cd nv-talent-hackathon-2024
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Instalar las dependencias necesarias
+
+```bash
+  npm install
+```
+
+Ejecutar el proyecto localmente: 
+```bash
+  npm start
+```
+    
