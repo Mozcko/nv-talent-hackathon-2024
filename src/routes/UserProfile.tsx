@@ -111,6 +111,13 @@ const UserProfile = () => {
           <div className="mt-10 text-2xl text-center mx-auto my-4 text-bold">
             <p className='text-bold text-5xl'>Mis Publicaciones</p>
           </div>
+          {/* Aquí agregamos el botón de "Añadir Publicación" */}
+          <div className="flex justify-center">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Añadir Publicación
+            </button>
+          </div>
+          {/* Aquí termina el botón de "Añadir Publicación" */}
           <div className="mt-10 flex flex-wrap justify-center">
             {user_cardData.map((card, index) => (
               <motion.div 
@@ -135,4 +142,5 @@ const UserProfile = () => {
       )
 }
 
-export default UserProfile
+export default UserProfile;
+
