@@ -95,13 +95,13 @@ export const postsData = [
         name: "Florería Sunny",
         image: fotoPerfil_floreriaSunny,
         job: "Floreria",
+        keys: 400,
         tags: {
           city: "Monterrey",
           category: "Flores",
           subcategory: "Flores individuales",
           delivery: "En local",
           product: "Rosas rojas",
-          keys: 400
           // Add more tag categories as needed
         }
       }
@@ -112,13 +112,13 @@ export const postsData = [
         name: "Abarrotes Luna",
         image: fotoPerfil_abarrotesLuna,
         job: "Tienda de Abarrotes",
+        keys: 300,
         tags: {
           city: "Xalapa",
           category: "Abarrotes",
           subcategory: "Miscelanea",
           delivery: "En local",
           product: "Leche",
-          keys: 300
           // Add more tag categories as needed
         }
       }
@@ -129,13 +129,13 @@ export const postsData = [
         name: "Café Sabor Urbano",
         image: fotoPerfil_saborUrbano,
         job: "Cafetería",
+        keys: 100,
         tags: {
           city: "Xalapa",
           category: "Alimentos y bebidas",
           subcategory: "Cafetería",
           delivery: "Delivery",
           product: "Café de especialidad",
-          keys: 100
           // Add more tag categories as needed
         }
       }
@@ -146,13 +146,13 @@ export const postsData = [
         name: "Eco Clean",
         image: fotoPerfil_ecoClean,
         job: "Productos de Limpieza sustentables",
+        keys: 700,
         tags: {
           city: "Mérida",
           category: "Jarcería",
           subcategory: "Sustentable",
           delivery: "MercadoLibre",
           product: "Limpiador Multiusos",
-          keys: 700
           // Add more tag categories as needed
         }
       }
@@ -163,13 +163,13 @@ export const postsData = [
         name: "Materiales Construyendo",
         image: fotoPerfil_materialesConstruyendo,
         job: "Materiales",
+        keys: 400,
         tags: {
           city: "Tijuana",
           category: "Materiales de Obra",
           subcategory: "Construcción",
           delivery: "Flete",
-          product: "Cemento",
-          keys: 400
+          product: "Cemento"
           // Add more tag categories as needed
         }
       }
@@ -180,13 +180,13 @@ export const postsData = [
         name: "Tlapalería Lola",
         image: fotoPerfil_TlapaleriaLola,
         job: "Comercio",
+        keys: 400,
         tags: {
           city: "Ciudad Juárez",
           category: "Materiales",
           subcategory: "Tlapalería",
           delivery: "En local",
-          product: "Tornillo",
-          keys: 100
+          product: "Tornillo"
           // Add more tag categories as needed
         }
       }
@@ -197,13 +197,13 @@ export const postsData = [
         name: "Alejandro Pérez",
         image: fotoPerfil_alejandroPerez,
         job: "Pastelero Independiente",
+        keys: 500,
         tags: {
           city: "Tijuana",
           category: "Repostería",
           subcategory: "Personalizada",
           delivery: "A Domicilio",
-          product: "Pastel de Bodas",
-          keys: 500
+          product: "Pastel de Bodas"
           // Add more tag categories as needed
         }
       }
@@ -214,13 +214,13 @@ export const postsData = [
         name: "Ana García",
         image: fotoPerfil_anaGarcia,
         job: "Diseñadora Freelance",
+        keys: 300,
         tags: {
           city: "Ciudad Juárez",
           category: "Dibujo por  Computadora",
           subcategory: "Renders 3D",
           delivery: "Digital",
-          product: "Renders de construcción",
-          keys: 300
+          product: "Renders de construcción"
           // Add more tag categories as needed
         }
       }
@@ -231,13 +231,13 @@ export const postsData = [
         name: "Carlos Martínez",
         image: fotoPerfil_carlosMartinez,
         job: "Hojalatero",
+        keys: 100,
         tags: {
           city: "Cancún",
           category: "Automotriz",
           subcategory: "Hojalatería y Pintura",
           delivery: "En local",
-          product: "Pintura",
-          keys: 100
+          product: "Pintura"
           // Add more tag categories as needed
         }
       }
