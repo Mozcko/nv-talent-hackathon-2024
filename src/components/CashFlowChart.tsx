@@ -1,9 +1,13 @@
 import React, { useRef, useEffect } from "react";
-import Chart from "chart.js/auto";
+import Chart, { ChartConfiguration } from "chart.js/auto";
 
-const CashFlowChart = ({ cashFlowData }) => {
-  const chartRef = useRef(null);
-  const chartInstance = useRef(null);
+interface CashFlowChartProps {
+  cashFlowData: number[];
+}
+
+const CashFlowChart: React.FC<CashFlowChartProps> = ({ cashFlowData }) => {
+  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartInstance = useRef<Chart<"line"> | null>(null);
 
   useEffect(() => {
     if (chartRef.current) {
@@ -11,7 +15,7 @@ const CashFlowChart = ({ cashFlowData }) => {
         chartInstance.current.destroy(); // Destruir el gráfico anterior
       }
 
-      chartInstance.current = new Chart(chartRef.current, {
+      const chartConfig: ChartConfiguration<"line"> = {
         type: "line",
         data: {
           labels: cashFlowData.map((_, index) => `Week ${index + 1}`),
@@ -25,16 +29,19 @@ const CashFlowChart = ({ cashFlowData }) => {
             },
           ],
         },
-      });
+      };
+
+      chartInstance.current = new Chart(chartRef.current, chartConfig);
     }
   }, [cashFlowData]);
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
       <h2 className="text-lg font-semibold">Flujo de efectivo</h2>
-        <canvas ref={chartRef}></canvas>
+      <canvas ref={chartRef}></canvas>
     </div>
   );
 };
 
 export default CashFlowChart;
+

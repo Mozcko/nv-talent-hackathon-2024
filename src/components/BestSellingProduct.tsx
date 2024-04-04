@@ -1,9 +1,18 @@
 import React, { useRef, useEffect } from "react";
-import Chart from "chart.js/auto";
+import Chart, { ChartConfiguration } from "chart.js/auto";
 
-const BestSellingProductsChart = ({ productData }) => {
-  const chartRef = useRef(null);
-  const chartInstance = useRef(null);
+interface Product {
+  productName: string;
+  salesCount: number;
+}
+
+interface BestSellingProductsChartProps {
+  productData: Product[];
+}
+
+const BestSellingProductsChart: React.FC<BestSellingProductsChartProps> = ({ productData }) => {
+  const chartRef = useRef<HTMLCanvasElement>(null);
+  const chartInstance = useRef<Chart<"bar"> | null>(null);
 
   useEffect(() => {
     if (chartRef.current) {
@@ -11,7 +20,7 @@ const BestSellingProductsChart = ({ productData }) => {
         chartInstance.current.destroy(); // Destruir el gráfico anterior
       }
 
-      chartInstance.current = new Chart(chartRef.current, {
+      const chartConfig: ChartConfiguration<"bar"> = {
         type: "bar",
         data: {
           labels: productData.map((product) => product.productName),
@@ -32,15 +41,16 @@ const BestSellingProductsChart = ({ productData }) => {
             },
           },
         },
-      });
+      };
+
+      chartInstance.current = new Chart(chartRef.current, chartConfig);
     }
   }, [productData]);
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
-      <h2 className="text-lg font-semibold">Productos mas vendidos</h2>
-      
-        <canvas ref={chartRef}></canvas>
+      <h2 className="text-lg font-semibold">Productos más vendidos</h2>
+      <canvas ref={chartRef}></canvas>
     </div>
   );
 };

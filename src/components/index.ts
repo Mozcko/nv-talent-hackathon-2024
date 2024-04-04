@@ -2,7 +2,6 @@ import Topbar from './Topbar';
 import FeedPost from './FeedPost';
 import FilterAside from './FilterAside';
 // import Tag from './Tag';
-import Aside from './FeedAside';
 import Profit from './Profit';
 import Expenses from './Expenses';
 import Income from './Income';
@@ -16,7 +15,6 @@ import Loader from './Loader'
 export {
     Topbar,
     FeedPost,
-    Aside,
     // Tag,
     FilterAside,
     Profit,

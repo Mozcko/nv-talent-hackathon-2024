@@ -5,18 +5,13 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { motion } from "framer-motion";
 import { user_tags, user_cardData } from "../constants";
-import { 
-  insignia1,
-  insignia2,
-  insignia3,
-  insignia4,
-  insignia5,
-  insignia6,
-  insignia7,
-  insignia8,  
-} from "../assets";
+import { insignia1, insignia2, insignia3, insignia4, insignia5, insignia6, insignia7, insignia8, maryFernandez, llave_coppel } from "../assets";
 
-import { maryFernandez, llave_coppel } from "../assets";
+interface TagProps {
+  text: string;
+  color: string;
+  pill: boolean;
+}
 
 const UserCard = () => {
     const [showPopover, setShowPopover] = useState(false);
@@ -45,9 +40,9 @@ const UserCard = () => {
     );
 };
 
-const Tag = ({ text, color, pill }) => {
+const Tag = ({ text, color }: TagProps) => {
   return (
-    <Badge size="md" pill={pill} className={`${color} mr-3 mt-3 text-white`}>
+    <Badge size="md" className={`${color} mr-3 mt-3 text-white`}>
       {text}
     </Badge>
   );
@@ -61,7 +56,7 @@ const UserProfile = () => {
             <div className="mt-0">
               <div className="m-10 flex flex-wrap items-center">
                 {user_tags.map((tag, index) => (
-                  <Tag key={index} text={tag.text} color={tag.color} />
+                  <Tag key={index} text={tag.text} color={tag.color} pill={tag.pill} />
                 ))}
               </div>
               <motion.div 
@@ -143,4 +138,3 @@ const UserProfile = () => {
 }
 
 export default UserProfile;
-
