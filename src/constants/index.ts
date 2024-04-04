@@ -1,7 +1,19 @@
 import {
-    maryFernandez,
-    floreria,
-    logo
+  full_logo,
+  logo,
+  coppel_emprende,
+  maryFernandez,
+  floreria,
+  fotoPerfil_alejandroPerez,
+    fotoPerfil_anaGarcia,
+    fotoPerfil_carlosMartinez,
+    fotoPerfil_ecoClean,
+    fotoPerfil_TlapaleriaLola,
+    fotoPerfil_abarrotesLuna,
+    fotoPerfil_marianaFernandezPP,
+    fotoPerfil_materialesConstruyendo,
+    fotoPerfil_saborUrbano,
+    fotoPerfil_floreriaSunny
 } from '../assets'
 
 export const user_tags = [
@@ -80,7 +92,7 @@ export const postsData = [
     {
       id: 1,
       user: {
-        name: "User 1",
+        name: "Florería Sunny",
         image: logo,
         job: "Job 1",
         tags: {
