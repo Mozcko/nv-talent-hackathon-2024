@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { 
   LogIn,
   Feed,
-  LogBook,
   LogBookForm,
   Dashboard,
   UserProfile,
@@ -47,7 +46,6 @@ function App() {
             path="/"
             element={isLoggedIn ? <Feed /> : <Navigate to="/login" />}
           />
-          <Route path="/logbook" element={<LogBook />} />
           <Route path="/logbookform" element={<LogBookForm />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/user" element={<UserProfile />} />
