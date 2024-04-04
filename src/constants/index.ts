@@ -93,14 +93,15 @@ export const postsData = [
       id: 1,
       user: {
         name: "Florería Sunny",
-        image: logo,
-        job: "Job 1",
+        image: fotoPerfil_floreriaSunny,
+        job: "Floreria",
         tags: {
-          city: "city1",
-          category: "category1",
-          subcategory: "subcategory1",
-          delivery: "delivery1",
-          product: "product1",
+          city: "Monterrey",
+          category: "Flores",
+          subcategory: "Flores individuales",
+          delivery: "En local",
+          product: "Rosas rojas",
+          keys: 400
           // Add more tag categories as needed
         }
       }
@@ -108,15 +109,16 @@ export const postsData = [
     {
       id: 2,
       user: {
-        name: "User 2",
-        image: logo,
-        job: "Job 2",
+        name: "Abarrotes Luna",
+        image: fotoPerfil_abarrotesLuna,
+        job: "Tienda de Abarrotes",
         tags: {
-          city: "city2",
-          category: "category2",
-          subcategory: "subcategory2",
-          delivery: "delivery2",
-          product: "product2",
+          city: "Xalapa",
+          category: "Abarrotes",
+          subcategory: "Miscelanea",
+          delivery: "En local",
+          product: "Leche",
+          keys: 300
           // Add more tag categories as needed
         }
       }
@@ -124,15 +126,16 @@ export const postsData = [
     {
       id: 3,
       user: {
-        name: "User 2",
-        image: logo,
-        job: "Job 2",
+        name: "Café Sabor Urbano",
+        image: fotoPerfil_saborUrbano,
+        job: "Cafetería",
         tags: {
-          city: "city2",
-          category: "category2",
-          subcategory: "subcategory2",
-          delivery: "delivery2",
-          product: "product2",
+          city: "Xalapa",
+          category: "Alimentos y bebidas",
+          subcategory: "Cafetería",
+          delivery: "Delivery",
+          product: "Café de especialidad",
+          keys: 100
           // Add more tag categories as needed
         }
       }
@@ -140,18 +143,103 @@ export const postsData = [
     {
       id: 4,
       user: {
-        name: "User 2",
-        image: logo,
-        job: "Job 2",
+        name: "Eco Clean",
+        image: fotoPerfil_ecoClean,
+        job: "Productos de Limpieza sustentables",
         tags: {
-          city: "city2",
-          category: "category2",
-          subcategory: "subcategory2",
-          delivery: "delivery2",
-          product: "product2",
+          city: "Mérida",
+          category: "Jarcería",
+          subcategory: "Sustentable",
+          delivery: "MercadoLibre",
+          product: "Limpiador Multiusos",
+          keys: 700
           // Add more tag categories as needed
         }
       }
     },
-    // Add more post data as needed
+    {
+      id: 5,
+      user: {
+        name: "Materiales Construyendo",
+        image: fotoPerfil_materialesConstruyendo,
+        job: "Materiales",
+        tags: {
+          city: "Tijuana",
+          category: "Materiales de Obra",
+          subcategory: "Construcción",
+          delivery: "Flete",
+          product: "Cemento",
+          keys: 400
+          // Add more tag categories as needed
+        }
+      }
+    },
+    {
+      id: 6,
+      user: {
+        name: "Tlapalería Lola",
+        image: fotoPerfil_TlapaleriaLola,
+        job: "Comercio",
+        tags: {
+          city: "Ciudad Juárez",
+          category: "Materiales",
+          subcategory: "Tlapalería",
+          delivery: "En local",
+          product: "Tornillo",
+          keys: 100
+          // Add more tag categories as needed
+        }
+      }
+    },
+    {
+      id: 7,
+      user: {
+        name: "Alejandro Pérez",
+        image: fotoPerfil_alejandroPerez,
+        job: "Pastelero Independiente",
+        tags: {
+          city: "Tijuana",
+          category: "Repostería",
+          subcategory: "Personalizada",
+          delivery: "A Domicilio",
+          product: "Pastel de Bodas",
+          keys: 500
+          // Add more tag categories as needed
+        }
+      }
+    },
+    {
+      id: 8,
+      user: {
+        name: "Ana García",
+        image: fotoPerfil_anaGarcia,
+        job: "Diseñadora Freelance",
+        tags: {
+          city: "Ciudad Juárez",
+          category: "Dibujo por  Computadora",
+          subcategory: "Renders 3D",
+          delivery: "Digital",
+          product: "Renders de construcción",
+          keys: 300
+          // Add more tag categories as needed
+        }
+      }
+    },
+    {
+      id: 9,
+      user: {
+        name: "Carlos Martínez",
+        image: fotoPerfil_carlosMartinez,
+        job: "Hojalatero",
+        tags: {
+          city: "Cancún",
+          category: "Automotriz",
+          subcategory: "Hojalatería y Pintura",
+          delivery: "En local",
+          product: "Pintura",
+          keys: 100
+          // Add more tag categories as needed
+        }
+      }
+    },
   ];
