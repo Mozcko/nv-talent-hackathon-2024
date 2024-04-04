@@ -105,9 +105,12 @@ const UserProfile = () => {
                     <FontAwesomeIcon icon={faInstagram} className="text-[4rem]" />
                 </a>
               </div>
+              
             </div>
           </div>  
-  
+          <div className="mt-10 text-2xl text-center mx-auto my-4 text-bold">
+            <p className='text-bold text-5xl'>Mis Publicaciones</p>
+          </div>
           <div className="mt-10 flex flex-wrap justify-center">
             {user_cardData.map((card, index) => (
               <motion.div 

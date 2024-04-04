@@ -202,7 +202,7 @@ const Recommendations = () => {
             className="bg-white p-4 rounded-lg shadow-md"
             >
             <p className="text-black-100 mb-2">
-              Business Wizard te recomienda: 
+              Tu Asesor dice:
               <div id="typed-element"></div>
             </p>
             <NavLink 

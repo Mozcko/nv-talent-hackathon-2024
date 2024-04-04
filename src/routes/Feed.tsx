@@ -70,27 +70,20 @@ const Feed = () => {
 
   return (
     <div className="flex flex-col md:flex-row">
-      {/* UserCard - Sticky en la parte superior */}
-      <div className="hidden md:block sticky top-16">
+      {/* Card - Oculta en pantallas pequeñas */}
+      <div className="hidden md:block">
         <UserCard />
       </div>
       
       {/* FeedPosts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
-        {filteredPosts.map((post, index) => (
-          <motion.div
-            key={post.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <FeedPost user={post.user} />
-          </motion.div>
+        {filteredPosts.map((post) => (
+          <FeedPost key={post.id} user={post.user} />
         ))}
       </div>
 
       {/* FilterAside - Hacer más pequeño en pantallas pequeñas */}
-      <div className="md:block sm:sticky top-16 h-full">
+      <div className="md:block sm:sticky fixed top-16 h-full">
         <FilterAside tags={tags} setFilters={setFilters} />
       </div>
     </div>

@@ -14,7 +14,7 @@ const FilterAside = ({ tags, setFilters }) => {
   };
 
   return (
-    <aside className="md:block top-16 sticky">
+    <aside className="md:block sm:sticky top-16 h-full">
       {/* Filtros para dispositivos grandes */}
       <div className="hidden md:flex flex-col bg-white-100 p-4 rounded-lg w-64">
         <h2 className="text-black-100">Filters</h2>

@@ -64,8 +64,10 @@ const LogBookForm: React.FC = () => {
       >
         <div className="m-5">
           <input type="text" name="concept" className="m-3 p-2 border border-black-200 rounded-md" placeholder="Concepto" required />
-          <input type="checkbox" name="service" className="ml-3 mr-1" id="service" onChange={handleServiceCheckboxChange} />
-          <label htmlFor="service" className="text-black-100">Servicio</label>
+          <div>
+            <input type="checkbox" name="service" className="ml-3 mr-1" id="service" onChange={handleServiceCheckboxChange} />
+            <label htmlFor="service" className="text-black-100">Servicio</label>
+          </div>
           <select name="type" className={`m-3 p-2 border border-black-200 rounded-md ${serviceChecked ? 'opacity-50 pointer-events-none' : ''}`} required disabled={serviceChecked}>
             <option value="Laptop">Venta</option>
             <option value="Accessories">Gasto</option>
