@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from "react";
 import { Table } from "flowbite-react";
+import { motion } from "framer-motion";
 
 interface Record {
   concepto: string;
@@ -26,7 +27,6 @@ const LogBookForm: React.FC = () => {
     const monto = `$${parseFloat(formData.get("value") as string).toFixed(2)}`;
     const isService = Boolean(serviceChecked);
   
-    // Si la categoría es "Servicio", establecer la cantidad en 1 y cambiar la categoría a "Servicio"
     if (isService) {
       addRecord({
         concepto: concepto,
@@ -55,7 +55,13 @@ const LogBookForm: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="bg-tertiary rounded-lg p-6">
+      <motion.form 
+        onSubmit={handleSubmit} 
+        className="bg-tertiary rounded-lg p-6"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="m-5">
           <input type="text" name="concept" className="m-3 p-2 border border-black-200 rounded-md" placeholder="Concepto" required />
           <input type="checkbox" name="service" className="ml-3 mr-1" id="service" onChange={handleServiceCheckboxChange} />
@@ -74,10 +80,14 @@ const LogBookForm: React.FC = () => {
           </select>
         </div>
         <button type="submit" className="bg-primary text-white-100 hover:bg-primary-dark rounded-lg p-2">Agregar</button>
-        
-      </form>
+      </motion.form>
 
-      <div className="overflow-x-auto">
+      <motion.div 
+        className="overflow-x-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         <h2 className="my-5 text-xl font-semibold text-black-100 mb-4 border-b border-black-200 pb-2">
           Mis Anotaciones
         </h2>
@@ -90,18 +100,24 @@ const LogBookForm: React.FC = () => {
           </Table.Head>
           <Table.Body className="divide-y">
             {records.map((record, index) => (
-              <Table.Row key={index} className="bg-white dark:border-gray-700 dark:bg-gray-800">
+              <motion.tr
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white dark:border-gray-700 dark:bg-gray-800"
+              >
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                   {record.concepto}
                 </Table.Cell>
                 <Table.Cell>{record.categoria}</Table.Cell>
                 <Table.Cell>{record.cantidad}</Table.Cell>
                 <Table.Cell>{record.monto}</Table.Cell>
-              </Table.Row>
+              </motion.tr>
             ))}
           </Table.Body>
         </Table>
-      </div>
+      </motion.div>
     </>
   );
 };

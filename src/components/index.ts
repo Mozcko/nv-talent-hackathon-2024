@@ -12,6 +12,7 @@ import CustomerSegmentsChart from './CustomerSegments';
 import SalesChannelTrendsChart from './SalesChannelsTradeChart';
 import ProfitabilityChart from './ProfitabilityChart'; 
 import Loader from './Loader' 
+import UserCard from './UserCard';
 
 export {
     Topbar,
@@ -28,4 +29,5 @@ export {
     SalesChannelTrendsChart,
     ProfitabilityChart,
     Loader,
+    UserCard,
 }
