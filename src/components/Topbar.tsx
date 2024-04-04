@@ -4,7 +4,7 @@ import { Navbar, Button, NavbarLink, Avatar } from "flowbite-react";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-import { logo } from "../assets";
+import { maryFernandez, logo } from "../assets";
 
 library.add(faSearch);
 
@@ -12,7 +12,7 @@ interface TopbarProps {
   isLoggedIn: boolean;
 }
 
-const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
+const Topbar: FC<TopbarProps> = ({ isLoggedIn = false }) => {
   const links = [
     { label: "Mi Tablero", href: "/dashboard" },
     { label: "Mi libreta", href: "/logbookform" },
@@ -20,7 +20,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
   ];
 
   return (
-    <Navbar fluid={true} rounded={true} className="bg-white-100 sticky top-0 z-50">
+    <Navbar fluid={true} rounded={true} className="bg-fill-100 sticky top-0 z-50">
       <Navbar.Brand href="/">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="PymeForge logo" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
@@ -32,7 +32,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
         {isLoggedIn && (
           <>
             {links.map((link) => (
-              <NavbarLink key={link.href} href={link.href} className="mt-3 bg-white-100 text-primary">
+              <NavbarLink key={link.href} href={link.href} className="mt-1 text-black text-lg">
                 {link.label}
               </NavbarLink>
             ))}
@@ -49,7 +49,7 @@ const Topbar: FC<TopbarProps> = ({ isLoggedIn = true }) => {
 
         {isLoggedIn && (
           <NavLink to="/user" className="inline-flex items-center ml-3">
-             <Avatar img={logo} alt="avatar of Jese" rounded />
+             <Avatar img={maryFernandez} alt="avatar of Jese" rounded />
           </NavLink>
         )}
       </Navbar.Collapse>

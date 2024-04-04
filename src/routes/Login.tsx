@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { coppel_emprende } from '../assets';

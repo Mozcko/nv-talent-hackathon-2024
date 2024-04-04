@@ -18,18 +18,27 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Comprueba si hay un estado de inicio de sesión almacenado en el almacenamiento local
     const loggedInStatus = localStorage.getItem('isLoggedIn');
-    if (loggedInStatus === 'true') {
+    const currentPath = window.location.pathname;
+
+    if (currentPath != '/login'){
       setIsLoggedIn(true);
+    }
+
+    // Establecer isLoggedIn como true solo si el usuario está en la página de login
+    if (loggedInStatus === 'true' && currentPath === '/login') {
+      setIsLoggedIn(false);
     }
   }, []);
 
   const handleLogin = () => {
-    // Realiza la lógica de inicio de sesión exitosa
     setIsLoggedIn(true);
-    // Almacena el estado de inicio de sesión en el almacenamiento local
     localStorage.setItem('isLoggedIn', 'true');
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.setItem('isLoggedIn', 'false');
   };
 
   return (
@@ -40,7 +49,13 @@ function App() {
         <Routes>
           <Route
             path="/login"
-            element={<LogIn onLogin={handleLogin} />}
+            element={
+              <LogIn
+                onLogin={() => {
+                  handleLogin();
+                }}
+              />
+            }
           />
           <Route
             path="/"
@@ -58,4 +73,3 @@ function App() {
 }
 
 export default App;
-

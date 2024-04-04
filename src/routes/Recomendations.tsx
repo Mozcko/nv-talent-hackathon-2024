@@ -149,7 +149,7 @@ const Recommendations = () => {
   }, [response]); // Dependencia para ejecutar el efecto cuando cambia la respuesta
 
   return (
-    <div className="p-4 bg-fill-100 mx-auto">
+    <div className="p-4 bg-tertiary mx-auto">
       <motion.h1
         className="text-3xl font-bold text-primary mb-4"
         initial={{ opacity: 0 }}

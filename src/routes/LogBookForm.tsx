@@ -55,7 +55,7 @@ const LogBookForm: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="bg-fill-100 rounded-lg p-6">
+      <form onSubmit={handleSubmit} className="bg-tertiary rounded-lg p-6">
         <div className="m-5">
           <input type="text" name="concept" className="m-3 p-2 border border-black-200 rounded-md" placeholder="Concepto" required />
           <input type="checkbox" name="service" className="ml-3 mr-1" id="service" onChange={handleServiceCheckboxChange} />

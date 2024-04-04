@@ -41,16 +41,15 @@ const Dashboard = () => {
 
   return (
     <div className="container mx-auto mt-8 text-center">
-      <div></div>
       <h1 className="text-4xl font-bold mb-8" style={{ color: "#2C587A" }}>Mi Tablero</h1>
 
       <h2 className="text-2xl mb-4" style={{ color: "#618AAF" }}>Tu camino hacia el éxito comienza aquí...</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 align-center">
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <Income />
         </div>
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <Expenses />
         </div>
       </div>
@@ -58,10 +57,10 @@ const Dashboard = () => {
       <h2 className="text-2xl mt-8 mb-4" style={{ color: "#2C587A" }}>¡Celebra tus ingresos como pasos hacia el éxito y gestiona tus gastos como inversiones en el futuro de tu negocio!</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <Profit revenue={profitData.revenue} expenses={profitData.expenses} profit={profitData.profit} />
         </div>
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <CashFlowChart cashFlowData={cashFlowData} />
         </div>
       </div>
@@ -69,24 +68,27 @@ const Dashboard = () => {
       <h2 className="text-2xl mt-8 mb-4" style={{ color: "#618AAF" }}>¡Descubre qué productos están volando de los estantes y cuáles están impulsando tu rentabilidad!</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <BestSellingProductsChart productData={productData} />
         </div>
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <ProfitabilityChart productProfitability={productProfitability} />
         </div>
       </div>
 
       <h2 className="text-2xl mt-8 mb-4" style={{ color: "#2C587A" }}>¡Mira esta visión detallada de quiénes son tus clientes y cómo prefieren comprar tus productos o servicios!</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="dashboard-item mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div className="mt-12">
           <CustomerSegmentsChart segmentData={segmentData} />
         </div>
-        <div className="dashboard-item mt-12">
+        <div className="mt-12">
           <SalesChannelTrendsChart channelData={channelData} />
         </div>
       </div>
+
+
+
     </div>
   );
 };
