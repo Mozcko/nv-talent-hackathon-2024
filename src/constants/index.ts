@@ -1,65 +1,62 @@
 import {
-  full_logo,
-  logo,
-  coppel_emprende,
-  maryFernandez,
-  floreria,
   fotoPerfil_alejandroPerez,
-    fotoPerfil_anaGarcia,
-    fotoPerfil_carlosMartinez,
-    fotoPerfil_ecoClean,
-    fotoPerfil_TlapaleriaLola,
-    fotoPerfil_abarrotesLuna,
-    fotoPerfil_marianaFernandezPP,
-    fotoPerfil_materialesConstruyendo,
-    fotoPerfil_saborUrbano,
-    fotoPerfil_floreriaSunny
+  fotoPerfil_anaGarcia,
+  fotoPerfil_carlosMartinez,
+  fotoPerfil_ecoClean,
+  fotoPerfil_TlapaleriaLola,
+  fotoPerfil_abarrotesLuna,
+  fotoPerfil_marianaFernandezPP,
+  fotoPerfil_materialesConstruyendo,
+  fotoPerfil_saborUrbano,
+  fotoPerfil_floreriaSunny,
+  arreglo_girasoles,
+  arreglo_rosas,
+  centro_mesa,
+  nochebuena,
+  ramo_rosas,
+  floreria,
+  insignia2,
 } from '../assets'
 
 export const user_tags = [
     {
-        text: "Front-End Developer",
-        color: "bg-primary",
+        text: "Flores",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "JavaScript",
-        color: "bg-primary",
+        text: "Perecederos",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "React",
-        color: "bg-primary",
+        text: "A Domicilio",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "Redux",
-        color: "bg-primary",
+        text: "Eventos",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "Node.js",
-        color: "bg-primary",
+        text: "Arreglos",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "Express.js",
-        color: "bg-primary",
+        text: "Ramos",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "MongoDB",
-        color: "bg-primary",
+        text: "Independiente",
+        color: "bg-fill-300",
         pill: true
     },
     {
-        text: "PostgreSQL",
-        color: "bg-primary",
-        pill: true
-    },
-    {
-        text: "GraphQL",
-        color: "bg-primary",
+        text: "Abierto a Colaborar",
+        color: "bg-fill-300",
         pill: true
     },
 ]
@@ -71,21 +68,35 @@ export const user_cardData = [
       "imageSrc": floreria
     },
     {
-        "title": "Nueva floreria abierta",
-        "description": "una nueva oportunidad surge, mi negocio crece y con ello mis sueños de seguir adelante",
-        "imageSrc": floreria
+        "title": "Llego San Valentin",
+        "description": "El amor esta en el aire y las rosas lo saben, ya llego un cargamento lleno de rosas para ramos buchones no te quedes sin el tuyo",
+        "imageSrc": ramo_rosas
     },
     {
-        "title": "Nueva floreria abierta",
-        "description": "una nueva oportunidad surge, mi negocio crece y con ello mis sueños de seguir adelante",
-        "imageSrc": floreria
+        "title": "Llego navidad",
+        "description": "llego navidad y por eso compre muchas nochebuenas, no te pierdas la oportunidad de tu también comprar las tuyas",
+        "imageSrc": nochebuena
     },
     {
-        "title": "Nueva floreria abierta",
-        "description": "una nueva oportunidad surge, mi negocio crece y con ello mis sueños de seguir adelante",
-        "imageSrc": floreria
+      "title": 'Conseguí mi insignia "desarrollate como lider"',
+      "description": "gracias @CoppelEmprende por darme las herramientas para crecer mi negocio ",
+      "imageSrc": insignia2
     },
-    // Añade más objetos de carta si lo deseas
+    {
+        "title": "Se acercan tus 15 años?",
+        "description": "los centros de mesa florales son hermosos y tu puedes tener los mejores en tu fiesta de 15 años",
+        "imageSrc": centro_mesa
+    },
+    {
+      "title": "El dia de las flores amarillas esta cerca",
+      "description": "los girasoles son flores hermosas no pierdas la oportunidad de regalar un arreglo con ellos en ese dia",
+      "imageSrc": arreglo_girasoles
+    },
+    {
+      "title": "Las madres merecen ser felices en su dia",
+      "description": "Haz feliz a tu mami en su dia especial con este arreglo de rosas",
+      "imageSrc": arreglo_rosas
+    },
 ]
 
 export const postsData = [
@@ -95,7 +106,7 @@ export const postsData = [
         name: "Florería Sunny",
         image: fotoPerfil_floreriaSunny,
         job: "Floreria",
-        keys: 400,
+        keys: 40,
         tags: {
           city: "Monterrey",
           category: "Flores",
@@ -112,7 +123,7 @@ export const postsData = [
         name: "Abarrotes Luna",
         image: fotoPerfil_abarrotesLuna,
         job: "Tienda de Abarrotes",
-        keys: 300,
+        keys: 30,
         tags: {
           city: "Xalapa",
           category: "Abarrotes",
@@ -129,7 +140,7 @@ export const postsData = [
         name: "Café Sabor Urbano",
         image: fotoPerfil_saborUrbano,
         job: "Cafetería",
-        keys: 100,
+        keys: 10,
         tags: {
           city: "Xalapa",
           category: "Alimentos y bebidas",
@@ -146,7 +157,7 @@ export const postsData = [
         name: "Eco Clean",
         image: fotoPerfil_ecoClean,
         job: "Productos de Limpieza sustentables",
-        keys: 700,
+        keys: 70,
         tags: {
           city: "Mérida",
           category: "Jarcería",
@@ -163,7 +174,7 @@ export const postsData = [
         name: "Materiales Construyendo",
         image: fotoPerfil_materialesConstruyendo,
         job: "Materiales",
-        keys: 400,
+        keys: 40,
         tags: {
           city: "Tijuana",
           category: "Materiales de Obra",
@@ -180,7 +191,7 @@ export const postsData = [
         name: "Tlapalería Lola",
         image: fotoPerfil_TlapaleriaLola,
         job: "Comercio",
-        keys: 400,
+        keys: 40,
         tags: {
           city: "Ciudad Juárez",
           category: "Materiales",
@@ -197,7 +208,7 @@ export const postsData = [
         name: "Alejandro Pérez",
         image: fotoPerfil_alejandroPerez,
         job: "Pastelero Independiente",
-        keys: 500,
+        keys: 50,
         tags: {
           city: "Tijuana",
           category: "Repostería",
@@ -214,7 +225,7 @@ export const postsData = [
         name: "Ana García",
         image: fotoPerfil_anaGarcia,
         job: "Diseñadora Freelance",
-        keys: 300,
+        keys: 30,
         tags: {
           city: "Ciudad Juárez",
           category: "Dibujo por  Computadora",

@@ -1,12 +1,49 @@
-import { Card } from "flowbite-react";
+import { useState } from 'react';
+import { Card, Avatar, Badge } from "flowbite-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { UserCard } from "../components";
 import { motion } from "framer-motion";
 import { user_tags, user_cardData } from "../constants";
+import { 
+  insignia1,
+  insignia2,
+  insignia3,
+  insignia4,
+  insignia5,
+  insignia6,
+  insignia7,
+  insignia8,  
+} from "../assets";
 
-import { Badge } from "flowbite-react";
+import { maryFernandez, llave_coppel } from "../assets";
+
+const UserCard = () => {
+    const [showPopover, setShowPopover] = useState(false);
+
+    return (
+        <Card className="top-16 mx-10 max-w-xs" imgSrc={maryFernandez}>
+            <h5 className="mb-1 text-center text-base font-bold tracking-tight text-black-100 dark:text-white">María Fernández</h5>
+            <p className="text-center font-normal text-black dark:text-gray-400">Florista</p>
+            <p className="text-center font-normal text-black-200 dark:text-gray-400">@MaryFernandez</p>
+            <div className="flex items-center justify-center relative">
+                <img
+                    src={llave_coppel}
+                    alt="Llave Coppel"
+                    className="w-6 h-6 mr-1 cursor-pointer"
+                    onMouseEnter={() => setShowPopover(true)}
+                    onMouseLeave={() => setShowPopover(false)}
+                />
+                {showPopover && (
+                    <div className="absolute z-10 bg-gray-800 text-white text-xs px-2 py-1 rounded-md -top-8 left-1/2 transform -translate-x-1/2">
+                        Llaves de Coppel Emprende
+                    </div>
+                )}
+                <span className="text-black-200 dark:text-gray-400">250</span>
+            </div>
+        </Card>
+    );
+};
 
 const Tag = ({ text, color, pill }) => {
   return (
@@ -28,13 +65,27 @@ const UserProfile = () => {
                 ))}
               </div>
               <motion.div 
-                className="mb-5 ml-5 flex items-center"
+                className="mb-5 ml-5 flex items-center flex-col lg:flex-row"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <FontAwesomeIcon icon={faLocationDot} className="ml-5 mr-3" size="2xl" style={{color: "#f8d835"}}/>
-                <p className="text-xl">Guadalajara, México</p>
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faLocationDot} className="ml-5 mr-3" size="2xl" style={{color: "#f8d835"}}/>
+                  <p className="text-xl">Guadalajara, México</p>
+                </div>
+                <div className="mt-5 lg:ml-16 lg:flex items-end z-0">
+                  <Avatar.Group>
+                    <Avatar img={insignia1} rounded stacked />
+                    <Avatar img={insignia3} rounded stacked />
+                    <Avatar img={insignia4} rounded stacked />
+                    <Avatar img={insignia5} rounded stacked />
+                    <Avatar img={insignia6} rounded stacked />
+                    <Avatar img={insignia7} rounded stacked />
+                    <Avatar img={insignia8} rounded stacked />
+                    <Avatar img={insignia2} rounded stacked />
+                  </Avatar.Group>
+                </div>
               </motion.div>
               <div className="items-center">
                 <p className="m-10 text-lg">Florista apasionada en Guadalajara, especializada en crear arreglos florales únicos para eventos especiales. 
@@ -42,17 +93,18 @@ const UserProfile = () => {
                   Déjame hacer de tu próximo momento especial una experiencia inolvidable con mis diseños florales.
                 </p>
               </div>
-              <div className="flex space-x-7 ml-10">
-                      <a href="#" className="text-green-500 hover:text-green-600">
-                          <FontAwesomeIcon icon={faWhatsapp} className="text-[4rem]" />
-                      </a>
-                      <a href="#" className="text-blue-500 hover:text-blue-600">
-                          <FontAwesomeIcon icon={faFacebook} className="text-6xl" />
-                      </a>
-                      <a href="#" className="text-pink-500 hover:text-pink-600">
-                          <FontAwesomeIcon icon={faInstagram} className="text-[4rem]" />
-                      </a>
-                  </div>
+              
+              <div className="flex items-center space-x-7 ml-10">
+                <a href="#" className="text-green-500 hover:text-green-600">
+                    <FontAwesomeIcon icon={faWhatsapp} className="text-[4rem]" />
+                </a>
+                <a href="#" className="text-blue-500 hover:text-blue-600">
+                    <FontAwesomeIcon icon={faFacebook} className="text-6xl" />
+                </a>
+                <a href="#" className="text-pink-500 hover:text-pink-600">
+                    <FontAwesomeIcon icon={faInstagram} className="text-[4rem]" />
+                </a>
+              </div>
             </div>
           </div>  
   
