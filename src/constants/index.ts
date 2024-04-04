@@ -5,6 +5,7 @@ import {
   fotoPerfil_ecoClean,
   fotoPerfil_TlapaleriaLola,
   fotoPerfil_abarrotesLuna,
+  fotoPerfil_marianaFernandezPP,
   fotoPerfil_materialesConstruyendo,
   fotoPerfil_saborUrbano,
   fotoPerfil_floreriaSunny,
@@ -62,38 +63,38 @@ export const user_tags = [
 
 export const user_cardData = [
     {
-      "title": "Nueva florería abierta",
-      "description": "Una nueva oportunidad surge, mi negocio crece y con ello mis sueños de seguir adelante",
+      "title": "Nueva floreria abierta",
+      "description": "una nueva oportunidad surge, mi negocio crece y con ello mis sueños de seguir adelante",
       "imageSrc": floreria
     },
     {
-        "title": "Llego San Valentín",
-        "description": "El amor está en el aire y las rosas lo saben, ya llegó un cargamento lleno de rosas para ramos buchones no te quedes sin el tuyo",
+        "title": "Llego San Valentin",
+        "description": "El amor esta en el aire y las rosas lo saben, ya llego un cargamento lleno de rosas para ramos buchones no te quedes sin el tuyo",
         "imageSrc": ramo_rosas
     },
     {
-        "title": "Llegó navidad",
-        "description": "Llegó navidad y por eso compré muchas nochebuenas, no te pierdas la oportunidad de tu también comprar las tuyas",
+        "title": "Llego navidad",
+        "description": "llego navidad y por eso compre muchas nochebuenas, no te pierdas la oportunidad de tu también comprar las tuyas",
         "imageSrc": nochebuena
     },
     {
       "title": 'Conseguí mi insignia "desarrollate como lider"',
-      "description": "Gracias @CoppelEmprende por darme las herramientas para crecer mi negocio!!!!",
+      "description": "gracias @CoppelEmprende por darme las herramientas para crecer mi negocio ",
       "imageSrc": insignia2
     },
     {
         "title": "Se acercan tus 15 años?",
-        "description": "Los centros de mesa florales son hermosos y tú puedes tener los mejores en tu fiesta de 15 años",
+        "description": "los centros de mesa florales son hermosos y tu puedes tener los mejores en tu fiesta de 15 años",
         "imageSrc": centro_mesa
     },
     {
-      "title": "El día de las flores amarillas está cerca",
-      "description": "Los girasoles son flores hermosas. No pierdas la oportunidad de regalar un arreglo con ellos en ese día",
+      "title": "El dia de las flores amarillas esta cerca",
+      "description": "los girasoles son flores hermosas no pierdas la oportunidad de regalar un arreglo con ellos en ese dia",
       "imageSrc": arreglo_girasoles
     },
     {
-      "title": "Las madres merecen ser felices en su día",
-      "description": "Haz feliz a tu mami en su día especial con este arreglo de rosas",
+      "title": "Las madres merecen ser felices en su dia",
+      "description": "Haz feliz a tu mami en su dia especial con este arreglo de rosas",
       "imageSrc": arreglo_rosas
     },
 ]

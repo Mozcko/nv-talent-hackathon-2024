@@ -14,7 +14,7 @@ const SalesChannelTrendsChart = ({ channelData }) => {
       chartInstance.current = new Chart(chartRef.current, {
         type: "line",
         data: {
-          labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6"],
+          labels: ["Semana 1", "Semana 2", "Semana 3", "Semana 4", "Semana 5", "Semana 6"],
           datasets: channelData.map((channel, index) => ({
             label: channel.channel,
             data: channel.salesTrend,

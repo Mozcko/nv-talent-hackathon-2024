@@ -17,7 +17,7 @@ const ProfitabilityChart = ({ productProfitability }) => {
           labels: productProfitability.map((product) => product.productName),
           datasets: [
             {
-              label: "Profitability",
+              label: "Rendiemiento",
               data: productProfitability.map((product) => product.profitability),
               backgroundColor: "rgba(75, 192, 192, 0.2)",
               borderColor: "rgba(75, 192, 192, 1)",

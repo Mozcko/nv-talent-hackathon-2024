@@ -17,7 +17,7 @@ const BestSellingProductsChart = ({ productData }) => {
           labels: productData.map((product) => product.productName),
           datasets: [
             {
-              label: "Productos más vendidos",
+              label: "Ventas",
               data: productData.map((product) => product.salesCount),
               backgroundColor: "rgba(255, 99, 132, 0.2)",
               borderColor: "rgba(255, 99, 132, 1)",

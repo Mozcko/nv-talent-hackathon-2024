@@ -79,12 +79,12 @@ const FeedPost = ({ user }) => {
           onClick={() => {}}
           className="inline-flex items-center rounded-lg bg-fill-600 px-6 py-3 text-center text-lg font-medium text-white hover:bg-fill-500 focus:outline-none focus:ring-4 focus:ring-fill-500 dark:bg-fill-500 dark:hover:bg-fill-500 dark:focus:ring-bg-fill-500"
         >
-          Add Friend
+          Agregar a MiRed
         </button>
 
         </div>
         <form className=" mt-4 flex flex-1">
-          <TextInput type="text" placeholder="Get in Touch" />
+          <TextInput type="text" placeholder="Contactar" />
           <Button color="gray" className="px-3 ml-2">
             <FontAwesomeIcon icon={faPaperPlane} />
           </Button>

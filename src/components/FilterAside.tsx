@@ -17,15 +17,15 @@ const FilterAside = ({ tags, setFilters }) => {
     <aside className="md:block sm:sticky top-16 h-full">
       {/* Filtros para dispositivos grandes */}
       <div className="hidden md:flex flex-col bg-white-100 p-4 rounded-lg w-64">
-        <h2 className="text-black-100">Filters</h2>
+        <h2 className="text-black-100">Filtros</h2>
         {/* Contenido de los filtros */}
         <div className="mt-4">
-          <h3 className="text-black-100">Cities</h3>
+          <h3 className="text-black-100">Ciudad</h3>
           <select
             className="w-full py-2 px-3 rounded-md border border-black-200"
             onChange={(e) => handleFilterChange("city", e)}
           >
-            <option value="">All</option>
+            <option value="">Todas</option>
             {tags.cities.map((city, index) => (
               <option key={index} value={city}>
                 {city}
@@ -35,12 +35,12 @@ const FilterAside = ({ tags, setFilters }) => {
         </div>
         {/* Añade los otros filtros aquí */}
         <div className="mt-4">
-          <h3 className="text-black-100">Categories</h3>
+          <h3 className="text-black-100">Categorias</h3>
           <select
             className="w-full py-2 px-3 rounded-md border border-black-200"
             onChange={(e) => handleFilterChange("category", e)}
           >
-            <option value="">All</option>
+            <option value="">Todas</option>
             {tags.categories.map((category, index) => (
               <option key={index} value={category}>
                 {category}
@@ -49,12 +49,12 @@ const FilterAside = ({ tags, setFilters }) => {
           </select>
         </div>
         <div className="mt-4">
-          <h3 className="text-black-100">Subcategories</h3>
+          <h3 className="text-black-100">Subcategorias</h3>
           <select
             className="w-full py-2 px-3 rounded-md border border-black-200"
             onChange={(e) => handleFilterChange("subcategory", e)}
           >
-            <option value="">All</option>
+            <option value="">Todas</option>
             {tags.subcategories.map((subcategory, index) => (
               <option key={index} value={subcategory}>
                 {subcategory}
@@ -63,12 +63,12 @@ const FilterAside = ({ tags, setFilters }) => {
           </select>
         </div>
         <div className="mt-4">
-          <h3 className="text-black-100">Delivery Types</h3>
+          <h3 className="text-black-100">Entrega</h3>
           <select
             className="w-full py-2 px-3 rounded-md border border-black-200"
             onChange={(e) => handleFilterChange("delivery", e)}
           >
-            <option value="">All</option>
+            <option value="">Todas</option>
             {tags.deliveryTypes.map((deliveryType, index) => (
               <option key={index} value={deliveryType}>
                 {deliveryType}
@@ -77,12 +77,12 @@ const FilterAside = ({ tags, setFilters }) => {
           </select>
         </div>
         <div className="mt-4">
-          <h3 className="text-black-100">Product Types</h3>
+          <h3 className="text-black-100">Productos</h3>
           <select
             className="w-full py-2 px-3 rounded-md border border-black-200"
             onChange={(e) => handleFilterChange("product", e)}
           >
-            <option value="">All</option>
+            <option value="">Todos</option>
             {tags.productTypes.map((productType, index) => (
               <option key={index} value={productType}>
                 {productType}
@@ -99,21 +99,21 @@ const FilterAside = ({ tags, setFilters }) => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <FontAwesomeIcon icon={faFilter} className="mr-2" /> {/* Ícono de filtro de Font Awesome */}
-          {isMenuOpen ? "Hide Filters" : "Show Filters"}
+          {isMenuOpen ? "Ocultar Filtros" : "Mostrar Filtros"}
         </button>
         {isMenuOpen && (
           <div className="mt-2">
             {/* Contenido del menú desplegable */}
             <div>
-              <h2 className="text-black-100">Filters</h2>
+              <h2 className="text-black-100">Filtros</h2>
               {/* Contenido de los filtros */}
               <div className="mt-2">
-                <h3 className="text-black-100">Cities</h3>
+                <h3 className="text-black-100">ciudad</h3>
                 <select
                   className="w-full py-2 px-3 rounded-md border border-black-200"
                   onChange={(e) => handleFilterChange("city", e)}
                 >
-                  <option value="">All</option>
+                  <option value="">Todos</option>
                   {tags.cities.map((city, index) => (
                     <option key={index} value={city}>
                       {city}
@@ -123,12 +123,12 @@ const FilterAside = ({ tags, setFilters }) => {
               </div>
               {/* Añade los otros filtros aquí */}
               <div className="mt-2">
-                <h3 className="text-black-100">Categories</h3>
+                <h3 className="text-black-100">Categorias</h3>
                 <select
                   className="w-full py-2 px-3 rounded-md border border-black-200"
                   onChange={(e) => handleFilterChange("category", e)}
                 >
-                  <option value="">All</option>
+                  <option value="">Todos</option>
                   {tags.categories.map((category, index) => (
                     <option key={index} value={category}>
                       {category}
@@ -137,12 +137,12 @@ const FilterAside = ({ tags, setFilters }) => {
                 </select>
               </div>
               <div className="mt-2">
-                <h3 className="text-black-100">Subcategories</h3>
+                <h3 className="text-black-100">Subcategorias</h3>
                 <select
                   className="w-full py-2 px-3 rounded-md border border-black-200"
                   onChange={(e) => handleFilterChange("subcategory", e)}
                 >
-                  <option value="">All</option>
+                  <option value="">Todos</option>
                   {tags.subcategories.map((subcategory, index) => (
                     <option key={index} value={subcategory}>
                       {subcategory}
@@ -151,12 +151,12 @@ const FilterAside = ({ tags, setFilters }) => {
                 </select>
               </div>
               <div className="mt-2">
-                <h3 className="text-black-100">Delivery Types</h3>
+                <h3 className="text-black-100">Entrega</h3>
                 <select
                   className="w-full py-2 px-3 rounded-md border border-black-200"
                   onChange={(e) => handleFilterChange("delivery", e)}
                 >
-                  <option value="">All</option>
+                  <option value="">Todos</option>
                   {tags.deliveryTypes.map((deliveryType, index) => (
                     <option key={index} value={deliveryType}>
                       {deliveryType}
@@ -165,12 +165,12 @@ const FilterAside = ({ tags, setFilters }) => {
                 </select>
               </div>
               <div className="mt-2">
-                <h3 className="text-black-100">Product Types</h3>
+                <h3 className="text-black-100">Productos</h3>
                 <select
                   className="w-full py-2 px-3 rounded-md border border-black-200"
                   onChange={(e) => handleFilterChange("product", e)}
                 >
-                  <option value="">All</option>
+                  <option value="">Todos</option>
                   {tags.productTypes.map((productType, index) => (
                     <option key={index} value={productType}>
                       {productType}

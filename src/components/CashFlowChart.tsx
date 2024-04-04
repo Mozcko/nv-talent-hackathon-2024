@@ -14,10 +14,10 @@ const CashFlowChart = ({ cashFlowData }) => {
       chartInstance.current = new Chart(chartRef.current, {
         type: "line",
         data: {
-          labels: cashFlowData.map((_, index) => `Week ${index + 1}`),
+          labels: cashFlowData.map((_, index) => `Semana ${index + 1}`),
           datasets: [
             {
-              label: "Cash Flow",
+              label: "Flujo",
               data: cashFlowData,
               fill: false,
               borderColor: "rgb(75, 192, 192)",
