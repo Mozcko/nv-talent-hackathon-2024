@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card, Button, TextInput } from "flowbite-react";
 import { Img } from "react-image";
+import { llave_coppel } from "../assets";
 
 import { Badge } from "flowbite-react";
 
@@ -15,6 +16,16 @@ const Tag = ({ text, color, pill }) => {
 };
 
 const FeedPost = ({ user }) => {
+  const popoverRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    popoverRef.current.style.display = "block";
+  };
+
+  const handleMouseLeave = () => {
+    popoverRef.current.style.display = "none";
+  };
+
   const tagsArray = Object.values(user.tags);
 
   return (
@@ -35,6 +46,26 @@ const FeedPost = ({ user }) => {
         <span className="text-sm text-gray-500 dark:text-gray-400">
           {user.job}
         </span>
+
+        <div
+          className="flex items-center justify-center relative"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <img
+            src={llave_coppel}
+            alt="Llave Coppel"
+            className="w-6 h-6 mr-1 cursor-pointer"
+          />
+          <div
+            ref={popoverRef}
+            className="absolute z-10 bg-gray-800 text-white text-xs px-2 py-1 rounded-md -top-8 left-1/2 transform -translate-x-1/2"
+            style={{ display: "none" }}
+          >
+            Llaves de Coppel Emprende
+          </div>
+          <span className="text-black-200 dark:text-gray-400">{user.keys}</span>
+        </div>
 
         {/* Display the tags using your custom Tag component */}
         <div className="flex flex-wrap justify-center mt-3">

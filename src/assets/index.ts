@@ -13,6 +13,20 @@ import fotoPerfil_marianaFernandezPP from './mariaFernandaPP.png'
 import fotoPerfil_materialesConstruyendo from './materialsEquipmentPP.png'
 import fotoPerfil_saborUrbano from './saborUrbanoPP.png'
 import fotoPerfil_floreriaSunny from './sunnyPP.png'
+import arreglo_girasoles from './Arreglo_girasoles.webp'
+import arreglo_rosas from './arreglo_rosas.jpeg'
+import centro_mesa from './centro_mesa.webp'
+import nochebuena from './nochebuena.jpeg'
+import ramo_rosas from './ramo_rosas.jpeg'
+import insignia1 from './Insignia 1.png'
+import insignia2 from './Insignia 2.png'
+import insignia3 from './Insignia 3.png'
+import insignia4 from './Insignia 4.png'
+import insignia5 from './Insignia 5.png'
+import insignia6 from './Insignia 6.png'
+import insignia7 from './Insignia 7.png'
+import insignia8 from './Insignia 8.png'
+import llave_coppel from './llavicuppil.png'
 
 export {
     full_logo,
@@ -29,5 +43,19 @@ export {
     fotoPerfil_marianaFernandezPP,
     fotoPerfil_materialesConstruyendo,
     fotoPerfil_saborUrbano,
-    fotoPerfil_floreriaSunny
+    fotoPerfil_floreriaSunny,
+    arreglo_girasoles,
+    arreglo_rosas,
+    centro_mesa,
+    nochebuena,
+    ramo_rosas,
+    insignia1,
+    insignia2,
+    insignia3,
+    insignia4,
+    insignia5,
+    insignia6,
+    insignia7,
+    insignia8,
+    llave_coppel,
 }
