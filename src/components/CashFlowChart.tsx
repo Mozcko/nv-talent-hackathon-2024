@@ -31,7 +31,7 @@ const CashFlowChart = ({ cashFlowData }) => {
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
-      <h2 className="text-lg font-semibold">Flujo de dinero</h2>
+      <h2 className="text-lg font-semibold">Flujo de efectivo</h2>
         <canvas ref={chartRef}></canvas>
     </div>
   );
