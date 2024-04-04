@@ -1,18 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import Chart, { ChartConfiguration } from "chart.js/auto";
+import Chart from "chart.js/auto";
 
-interface Segment {
-  segment: string;
-  customersCount: number;
-}
-
-interface CustomerSegmentsChartProps {
-  segmentData: Segment[];
-}
-
-const CustomerSegmentsChart: React.FC<CustomerSegmentsChartProps> = ({ segmentData }) => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
-  const chartInstance = useRef<Chart<"doughnut"> | null>(null);
+const CustomerSegmentsChart = ({ segmentData }) => {
+  const chartRef = useRef(null);
+  const chartInstance = useRef(null);
 
   useEffect(() => {
     if (chartRef.current) {
@@ -20,7 +11,7 @@ const CustomerSegmentsChart: React.FC<CustomerSegmentsChartProps> = ({ segmentDa
         chartInstance.current.destroy(); // Destruir el gráfico anterior
       }
 
-      const chartConfig: ChartConfiguration<"doughnut"> = {
+      chartInstance.current = new Chart(chartRef.current, {
         type: "doughnut",
         data: {
           labels: segmentData.map((segment) => segment.segment),
@@ -36,17 +27,16 @@ const CustomerSegmentsChart: React.FC<CustomerSegmentsChartProps> = ({ segmentDa
             },
           ],
         },
-      };
-
-      chartInstance.current = new Chart(chartRef.current, chartConfig);
+      });
     }
   }, [segmentData]);
 
   return (
     <div className="bg-white shadow-md rounded-lg p-4">
-      <h2 className="text-lg font-semibold">Segmentación de clientes</h2>
-      <canvas ref={chartRef}></canvas>
-    </div>
+      <h2 className="text-lg font-semibold">Segmentacion de clientes</h2>
+      
+  <canvas ref={chartRef}></canvas>
+  </div>
   );
 };
 

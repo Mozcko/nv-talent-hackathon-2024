@@ -1,35 +1,31 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { coppel_emprende } from '../assets';
 import { useNavigate } from 'react-router-dom';
-import Loader from '../components/Loader';
+import Loader from '../components/Loader'; // Importa el componente Loader
 
-interface Props {
-  onLogin: () => void;
-}
-
-const LogIn: React.FC<Props> = ({ onLogin }) => {
-  const [creatingAccount, setCreatingAccount] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [confirmPassword, setConfirmPassword] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+const LogIn = ({ onLogin }) => {
+  const [creatingAccount, setCreatingAccount] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleToggleCreateAccount = () => {
     setCreatingAccount(!creatingAccount);
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
   };
 
@@ -42,7 +38,7 @@ const LogIn: React.FC<Props> = ({ onLogin }) => {
     }, 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -60,7 +56,7 @@ const LogIn: React.FC<Props> = ({ onLogin }) => {
 
   return (
     <div className="mt-10 flex justify-center">
-      {isLoading && <Loader />}
+      {isLoading && <Loader />} {/* Renderiza el componente Loader si isLoading es true */}
       <form onSubmit={handleSubmit} className={`flex max-w-md flex-col gap-4 bg-white-200 p-10 shadow-2xl ${isLoading ? 'opacity-50 pointer-events-none' : ''}`}>
         <div className="mt-2 flex justify-center items-center gap-2">
           <FaFacebook size={24} className="text-blue-700 cursor-pointer" onClick={handleLogin} />

@@ -36,6 +36,11 @@ function App() {
     localStorage.setItem('isLoggedIn', 'true');
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.setItem('isLoggedIn', 'false');
+  };
+
   return (
     <BrowserRouter>
       <div>

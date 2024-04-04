@@ -4,75 +4,68 @@ import OpenAI from "openai";
 import { NavLink } from 'react-router-dom';
 import Typed from 'typed.js';
 
-type Question = {
-  question: string;
-  answers: string[];
-};
-
-const Recommendations: React.FC = () => {
-  const questions: Question[] = [
+const Recommendations = () => {
+  const questions = [
     {
-      question: "¿Cuál es tu objetivo principal al buscar hacer crecer tu negocio?",
-      answers: ["Expandir mercado", "Incrementar ventas", "Mejorar rentabilidad", "Diversificar productos/servicios"]
+      "question": "¿Cuál es tu objetivo principal al buscar hacer crecer tu negocio?",
+      "answers": ["Expandir mercado", "Incrementar ventas", "Mejorar rentabilidad", "Diversificar productos/servicios"]
     },
     {
-      question: "¿Cuál es el segmento de mercado al que principalmente te diriges?",
-      answers: ["Consumidor final", "Empresas", "Sector específico (ej. tecnología, moda, salud)", "Localidad geográfica"]
+      "question": "¿Cuál es el segmento de mercado al que principalmente te diriges?",
+      "answers": ["Consumidor final", "Empresas", "Sector específico (ej. tecnología, moda, salud)", "Localidad geográfica"]
     },
     {
-      question: "¿Cuál es tu estrategia de marketing actual?",
-      answers: ["Publicidad en redes sociales", "Email marketing", "Participación en eventos locales", "Colaboraciones con otras empresas"]
+      "question": "¿Cuál es tu estrategia de marketing actual?",
+      "answers": ["Publicidad en redes sociales", "Email marketing", "Participación en eventos locales", "Colaboraciones con otras empresas"]
     },
     {
-      question: "¿Qué recursos adicionales necesitas para expandir tu negocio?",
-      answers: ["Financiamiento", "Personal adicional", "Capacitación", "Mejora de infraestructura"]
+      "question": "¿Qué recursos adicionales necesitas para expandir tu negocio?",
+      "answers": ["Financiamiento", "Personal adicional", "Capacitación", "Mejora de infraestructura"]
     },
     {
-      question: "¿Cuáles son los principales desafíos que enfrentas en este momento?",
-      answers: ["Competencia", "Baja demanda", "Problemas de logística", "Falta de visibilidad en el mercado"]
+      "question": "¿Cuáles son los principales desafíos que enfrentas en este momento?",
+      "answers": ["Competencia", "Baja demanda", "Problemas de logística", "Falta de visibilidad en el mercado"]
     },
     {
-      question: "¿Cómo defines el éxito para tu negocio?",
-      answers: ["Crecimiento de ingresos", "Reconocimiento de marca", "Satisfacción del cliente", "Rentabilidad sostenible"]
+      "question": "¿Cómo defines el éxito para tu negocio?",
+      "answers": ["Crecimiento de ingresos", "Reconocimiento de marca", "Satisfacción del cliente", "Rentabilidad sostenible"]
     },
     {
-      question: "¿Cuál es tu plan para diferenciarte de la competencia?",
-      answers: ["Innovación en productos/servicios", "Calidad superior", "Atención al cliente personalizada", "Precios competitivos"]
+      "question": "¿Cuál es tu plan para diferenciarte de la competencia?",
+      "answers": ["Innovación en productos/servicios", "Calidad superior", "Atención al cliente personalizada", "Precios competitivos"]
     },
     {
-      question: "¿Qué estrategias de fidelización de clientes has implementado?",
-      answers: ["Programas de lealtad", "Descuentos para clientes frecuentes", "Eventos exclusivos para clientes", "Atención postventa personalizada"]
+      "question": "¿Qué estrategias de fidelización de clientes has implementado?",
+      "answers": ["Programas de lealtad", "Descuentos para clientes frecuentes", "Eventos exclusivos para clientes", "Atención postventa personalizada"]
     },
     {
-      question: "¿Cómo evalúas la satisfacción del cliente en tu negocio?",
-      answers: ["Encuestas de satisfacción", "Feedback directo de los clientes", "Análisis de reseñas en línea", "Seguimiento de quejas y reclamaciones"]
+      "question": "¿Cómo evalúas la satisfacción del cliente en tu negocio?",
+      "answers": ["Encuestas de satisfacción", "Feedback directo de los clientes", "Análisis de reseñas en línea", "Seguimiento de quejas y reclamaciones"]
     },
     {
-      question: "¿Qué recursos y herramientas utilizas para llevar el control financiero de tu negocio?",
-      answers: ["Software de contabilidad", "Presupuestos detallados", "Asesoría financiera externa", "Seguimiento de métricas financieras clave"]
+      "question": "¿Qué recursos y herramientas utilizas para llevar el control financiero de tu negocio?",
+      "answers": ["Software de contabilidad", "Presupuestos detallados", "Asesoría financiera externa", "Seguimiento de métricas financieras clave"]
     }
   ];
 
-  type Answers = { [questionId: number]: string };
-
-  const [answers, setAnswers] = useState<Answers>({});
-  const [showForm, setShowForm] = useState<boolean>(true);
-  const [response, setResponse] = useState<string>('');
-  const [typedInstance, setTypedInstance] = useState<Typed | null>(null); // Estado para guardar la instancia de Typed
+  const [answers, setAnswers] = useState({});
+  const [showForm, setShowForm] = useState(true);
+  const [response, setResponse] = useState('');
+  const [typedInstance, setTypedInstance] = useState(null); // Estado para guardar la instancia de Typed
 
   const openai = new OpenAI({
     apiKey: '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',
     dangerouslyAllowBrowser: true,
   });
 
-  const handleAnswerChange = (questionId: number, answer: string) => {
+  const handleAnswerChange = (questionId, answer) => {
     setAnswers(prevAnswers => ({
      ...prevAnswers,
       [questionId]: answer
     }));
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const answersArray = Object.values(answers);
     console.log('Respuestas del usuario:', answersArray);
@@ -88,13 +81,13 @@ const Recommendations: React.FC = () => {
     setShowForm(false);
   };
 
-  const generatePrompt = (answers: Answers): string => {
+  const generatePrompt = (answers) => {
     let prompt = "Eres un experto en finanzas y microempresas estas teniendo una "
     "entrevista con un microempresario dale recomendaciones utiles para su negocio "
     "basado en las siguientes preguntas y respuestas obtenidas en dicha entrevista:"
     "procura usar saltos de linea e identacion para que sea mas comprensible \n\n";
     for (const [questionId, answer] of Object.entries(answers)) {
-      prompt += `Q: ${questionId}. ${questionIdToText(Number(questionId))}\n`;
+      prompt += `Q: ${questionId}. ${questionIdToText(questionId)}\n`;
       prompt += `A: ${answer}\n\n`;
     }
 
@@ -102,24 +95,25 @@ const Recommendations: React.FC = () => {
     return prompt;
   };
 
-  const questionIdToText = (questionId: number): string => {
-    const questionsText = [
-      "¿Cuál es tu objetivo principal al buscar hacer crecer tu negocio?",
-      "¿Cuál es el segmento de mercado al que principalmente te diriges?",
-      "¿Cuál es tu estrategia de marketing actual?",
-      "¿Qué recursos adicionales necesitas para expandir tu negocio?",
-      "¿Cuáles son los principales desafíos que enfrentas en este momento?",
-      "¿Cómo defines el éxito para tu negocio?",
-      "¿Cuál es tu plan para diferenciarte de la competencia?",
-      "¿Qué estrategias de fidelización de clientes has implementado?",
-      "¿Cómo evalúas la satisfacción del cliente en tu negocio?",
-      "¿Qué recursos y herramientas utilizas para llevar el control financiero de tu negocio?",
+  const questionIdToText = (questionId) => {
+    const questions = [
+        "¿Cuál es tu objetivo principal al buscar hacer crecer tu negocio?",
+        "¿Cuál es el segmento de mercado al que principalmente te diriges?",
+        "¿Cuál es tu estrategia de marketing actual?",
+        "¿Qué recursos adicionales necesitas para expandir tu negocio?",
+        "¿Cuáles son los principales desafíos que enfrentas en este momento?",
+        "¿Cómo defines el éxito para tu negocio?",
+        "¿Cuál es tu plan para diferenciarte de la competencia?",
+        "¿Qué estrategias de fidelización de clientes has implementado?",
+        "¿Cómo evalúas la satisfacción del cliente en tu negocio?",
+        "¿Qué recursos y herramientas utilizas para llevar el control financiero de tu negocio?",
+      // Add more questions here if you have more than three.
     ];
 
-    return questionsText[questionId - 1];
+    return questions[questionId - 1];
   };
 
-  const interactWithAI = async (prompt: string) => {
+  const interactWithAI = async (prompt) => {
     try {
       const response = await openai.chat.completions.create({
         model: "gpt-3.5-turbo",
@@ -135,7 +129,7 @@ const Recommendations: React.FC = () => {
       const answer = response.choices[0].message.content;
 
       console.log('Respuesta de la IA:', answer);
-      setResponse(answer || '');
+      setResponse(answer);
     } catch (error) {
       console.error('Error al interactuar con la API de OpenAI:', error);
     }
@@ -225,4 +219,3 @@ const Recommendations: React.FC = () => {
 };
 
 export default Recommendations;
-

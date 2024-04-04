@@ -2,32 +2,10 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono de filtro de Font Awesome
 
-interface Tags {
-  cities: string[];
-  categories: string[];
-  subcategories: string[];
-  deliveryTypes: string[];
-  productTypes: string[];
-}
-
-interface FilterAsideProps {
-  tags: Tags;
-  setFilters: React.Dispatch<React.SetStateAction<Filters>>;
-}
-
-interface Filters {
-  city: string;
-  category: string;
-  subcategory: string;
-  delivery: string;
-  product: string;
-  [key: string]: string;
-}
-
-const FilterAside: React.FC<FilterAsideProps> = ({ tags, setFilters }) => {
+const FilterAside = ({ tags, setFilters }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleFilterChange = (category: string, e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleFilterChange = (category, e) => {
     const value = e.target.value;
     setFilters((prevFilters) => ({
       ...prevFilters,

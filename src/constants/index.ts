@@ -61,41 +61,41 @@ export const user_tags = [
 ]
 
 export const user_cardData = [
-  {
+    {
       "title": "Nueva florería abierta",
       "description": "Una nueva oportunidad surge, mi negocio crece y con ello mis sueños de seguir adelante",
       "imageSrc": floreria
-  },
-  {
-      "title": "Llegó San Valentín",
-      "description": "El amor está en el aire y las rosas lo saben, ya llegó un cargamento lleno de rosas para ramos buchones. ¡No te quedes sin el tuyo!",
-      "imageSrc": ramo_rosas
-  },
-  {
-      "title": "Llegó Navidad",
-      "description": "Llegó Navidad y por eso compré muchas nochebuenas. ¡No te pierdas la oportunidad de también comprar las tuyas!",
-      "imageSrc": nochebuena
-  },
-  {
-      "title": "Conseguí mi insignia 'desarróllate como líder'",
-      "description": "¡Gracias @CoppelEmprende por darme las herramientas para hacer crecer mi negocio!",
+    },
+    {
+        "title": "Llego San Valentín",
+        "description": "El amor está en el aire y las rosas lo saben, ya llegó un cargamento lleno de rosas para ramos buchones no te quedes sin el tuyo",
+        "imageSrc": ramo_rosas
+    },
+    {
+        "title": "Llegó navidad",
+        "description": "Llegó navidad y por eso compré muchas nochebuenas, no te pierdas la oportunidad de tu también comprar las tuyas",
+        "imageSrc": nochebuena
+    },
+    {
+      "title": 'Conseguí mi insignia "desarrollate como lider"',
+      "description": "Gracias @CoppelEmprende por darme las herramientas para crecer mi negocio!!!!",
       "imageSrc": insignia2
-  },
-  {
-      "title": "¿Se acercan tus 15 años?",
-      "description": "Los centros de mesa florales son hermosos y tú puedes tener los mejores en tu fiesta de 15 años",
-      "imageSrc": centro_mesa
-  },
-  {
+    },
+    {
+        "title": "Se acercan tus 15 años?",
+        "description": "Los centros de mesa florales son hermosos y tú puedes tener los mejores en tu fiesta de 15 años",
+        "imageSrc": centro_mesa
+    },
+    {
       "title": "El día de las flores amarillas está cerca",
       "description": "Los girasoles son flores hermosas. No pierdas la oportunidad de regalar un arreglo con ellos en ese día",
       "imageSrc": arreglo_girasoles
-  },
-  {
+    },
+    {
       "title": "Las madres merecen ser felices en su día",
       "description": "Haz feliz a tu mami en su día especial con este arreglo de rosas",
       "imageSrc": arreglo_rosas
-  }
+    },
 ]
 
 export const postsData = [

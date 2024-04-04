@@ -7,52 +7,31 @@ import { llave_coppel } from "../assets";
 
 import { Badge } from "flowbite-react";
 
-interface TagProps {
-  text: string;
-  color: string;
-  pill: boolean;
-}
-
-const Tag: React.FC<TagProps> = ({ text, color }) => {
+const Tag = ({ text, color, pill }) => {
   return (
-    <Badge className={`${color} ml-1 mt-3 text-white-100 text-xs`}>
+    <Badge pill={pill} className={`${color} ml-1 mt-3 text-white-100 text-xs`}>
       {text}
     </Badge>
   );
 };
 
-interface User {
-  name: string;
-  image: string;
-  job: string;
-  keys: int;
-  tags: { [key: string]: string };
-}
-
-interface FeedPostProps {
-  user: User;
-}
-
-const FeedPost: React.FC<FeedPostProps> = ({ user }) => {
-  const popoverRef = useRef<HTMLDivElement>(null);
+const FeedPost = ({ user }) => {
+  const popoverRef = useRef(null);
 
   const handleMouseEnter = () => {
-    if (popoverRef.current) {
-      popoverRef.current.style.display = "block";
-    }
+    popoverRef.current.style.display = "block";
   };
 
   const handleMouseLeave = () => {
-    if (popoverRef.current) {
-      popoverRef.current.style.display = "none";
-    }
+    popoverRef.current.style.display = "none";
   };
 
   const tagsArray = Object.values(user.tags);
 
   return (
     <Card className="max-w-sm mt-4">
-      <div className="flex justify-end px-4 pt-4"></div>
+      <div className="flex justify-end px-4 pt-4">
+      </div>
       <div className="flex flex-col items-center pb-10">
         <Img
           alt="Bonnie image"
@@ -91,19 +70,20 @@ const FeedPost: React.FC<FeedPostProps> = ({ user }) => {
         {/* Display the tags using your custom Tag component */}
         <div className="flex flex-wrap justify-center mt-3">
           {tagsArray.map((tag, index) => (
-            <Tag key={index} text={tag} color="bg-fill-300" pill={true} />
+            <Tag key={index} text={tag} color="bg-fill-300" />
           ))}
         </div>
 
         <div className="mt-4 flex space-x-3 lg:mt-6">
-          <button
-            onClick={() => {}}
-            className="inline-flex items-center rounded-lg bg-fill-600 px-6 py-3 text-center text-lg font-medium text-white hover:bg-fill-500 focus:outline-none focus:ring-4 focus:ring-fill-500 dark:bg-fill-500 dark:hover:bg-fill-500 dark:focus:ring-bg-fill-500"
-          >
-            Add Friend
-          </button>
+        <button
+          onClick={() => {}}
+          className="inline-flex items-center rounded-lg bg-fill-600 px-6 py-3 text-center text-lg font-medium text-white hover:bg-fill-500 focus:outline-none focus:ring-4 focus:ring-fill-500 dark:bg-fill-500 dark:hover:bg-fill-500 dark:focus:ring-bg-fill-500"
+        >
+          Add Friend
+        </button>
+
         </div>
-        <form className="mt-4 flex flex-1">
+        <form className=" mt-4 flex flex-1">
           <TextInput type="text" placeholder="Get in Touch" />
           <Button color="gray" className="px-3 ml-2">
             <FontAwesomeIcon icon={faPaperPlane} />
